@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import {CommonModule} from "@angular/common";
 import { MainLayoutComponent } from './components/main-layout-component/main-layout.component';
-import {RouterModule, RouterOutlet} from "@angular/router";
+import {RouterModule} from "@angular/router";
 import { PaginationComponent } from './components/pagination/pagination.component';
 import {RuDatePipe} from "./pipes/ru-date.pipe";
 import {TournamentService} from "./services/tournaments.service";
