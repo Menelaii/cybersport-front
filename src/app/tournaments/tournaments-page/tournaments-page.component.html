@@ -1,0 +1,24 @@
+<div class="tournaments-page">
+  <h1 class="tournaments-page__title">Турниры</h1>
+
+  <div class="tournaments-list" *ngIf="!isLoading">
+    <a class="tournament" *ngFor="let tournament of tournaments" [routerLink]="'/tournaments/' + tournament.id">
+      <div>
+        <h2 class="tournament__name">Название турнира: {{ tournament.name }}</h2>
+        <p class="tournament__detail">Дисциплина: {{ tournament.discipline }}</p>
+        <p class="tournament__detail">Организатор: {{ tournament.organizer }}</p>
+        <p class="tournament__detail">Местоположение: {{ tournament.location }}</p>
+        <p class="tournament__detail">Дата начала: {{ tournament.startDate | ruDate }}</p>
+        <p class="tournament__detail">Дата окончания: {{ tournament.endDate | ruDate }}</p>
+        <p class="tournament__detail">Статус: {{ tournament.isStarted ? 'Начат' : 'Не начат' }}</p>
+      </div>
+    </a>
+  </div>
+
+  <app-pagination
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [totalElements]="totalElements"
+    class="pagination"
+  ></app-pagination>
+</div>

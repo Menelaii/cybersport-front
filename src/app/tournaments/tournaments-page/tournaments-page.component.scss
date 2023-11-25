@@ -1,0 +1,44 @@
+.tournaments-page {
+  &__title {
+    text-align: center;
+    margin-top: 0;
+    font-size: 2.5em;
+    //margin-bottom: 0.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .tournaments-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .tournament {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 45%;
+    text-decoration: none; // Remove link decoration
+
+    &__name,
+    &__detail {
+      color: #333; // Adjusted color to prevent blue link color
+      font-size: 1em; // Consistent font size for details
+    }
+
+    &__name {
+      font-size: 1.4em; // Larger font size for the tournament name
+    }
+  }
+
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+  }
+}

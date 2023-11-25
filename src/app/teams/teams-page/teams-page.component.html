@@ -1,0 +1,20 @@
+<div class="teams-page">
+<!--    <h1 class="teams-page__title">Команды</h1>-->
+  <h1 class="teams-page__title">Список команд</h1>
+  <p class="teams-page__description">Выберете из списка команду для подробной информации</p>
+
+    <div class="teams-list">
+      <a class="team" *ngFor="let team of teams" style="text-decoration: none;" [routerLink]="'/teams/' +  team.id">
+        <div>
+          <h2 class="team__name">{{ team.name }}</h2>
+        </div>
+      </a>
+
+    </div>
+
+    <app-pagination
+            [currentPage]="currentPage"
+            [itemsPerPage]="itemsPerPage"
+            [totalElements]="totalElements"
+    ></app-pagination>
+</div>

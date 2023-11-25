@@ -1,0 +1,15 @@
+<div class="team-page">
+  <h1 class="team-page__title">Подробнее о команде</h1>
+  <p class="team-page__description"></p>
+</div>
+
+<div *ngIf="team" class="team-details">
+  <h2>Название команды: {{ team?.name }}</h2>
+  <h2>Капитан: {{ team.captain.firstName }} {{ team.captain.lastName }}</h2>
+  <h2>Игроки:</h2>
+  <ul>
+    <li *ngFor="let player of team.players">
+      {{ player.firstName }} {{ player.lastName }}
+    </li>
+  </ul>
+</div>

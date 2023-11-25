@@ -1,0 +1,15 @@
+<div class="matches-container">
+    <h2 class="matches-title">Текущий Этап Матчи</h2>
+    <div class="matches-list">
+        <div *ngFor="let match of matches" class="match-card">
+            <p class="match-info">{{ match.team1.name }} vs {{ match.team2.name }}</p>
+            <p class="match-winner">Победитель: {{ match.winnerTeam?.name || 'Ожидается' }}</p>
+        </div>
+    </div>
+
+    <app-pagination
+            [currentPage]="currentPage"
+            [itemsPerPage]="itemsPerPage"
+            [totalElements]="totalElements">
+    </app-pagination>
+</div>

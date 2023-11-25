@@ -1,0 +1,30 @@
+<div class="tournament-page">
+  <h1 class="tournament-page__title">Турнир</h1>
+</div>
+
+  <div *ngIf="tournament" class="tournament-details">
+    <p class="tournament__name">Название турнира: {{ tournament.name }}</p>
+    <p>Дисциплина: {{ tournament.discipline }}</p>
+    <p>Организатор: {{ tournament.organizer }}</p>
+    <p>Местоположение: {{ tournament.location }}</p>
+    <p>Дата начала: {{ tournament.startDate | date }}</p>
+    <p>Дата окончания: {{ tournament.endDate | date }}</p>
+    <p>Статус: {{ tournament.isStarted ? 'Начат' : 'Не начат' }}</p>
+
+    <h2>Команды</h2>
+    <ul>
+        <li *ngFor="let team of tournament.teams">{{ team.name }}</li>
+    </ul>
+
+    <h2>Этапы Турнира</h2>
+    <ul>
+        <li *ngFor="let stage of tournament.stages">{{ stage.name }}</li>
+    </ul>
+
+    <h2>Результаты</h2>
+    <ul>
+        <li *ngFor="let result of tournament.results">
+            Команда {{ result.teamId }}, место: {{ result.takenPlace }}
+        </li>
+    </ul>
+</div>
