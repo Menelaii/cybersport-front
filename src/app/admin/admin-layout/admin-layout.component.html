@@ -1,0 +1,28 @@
+<!-- admin-layout.component.html -->
+<div class="main-layout">
+    <header class="header">
+        <div class="logo">
+            <!-- Здесь может быть ваш логотип или название вашего приложения -->
+            <nav class="navigation">
+                <ul>
+                    <li><a routerLink="/" style="text-decoration: none">EsportMonitor</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a routerLink="/admin/dashboard">Dashboard</a></li>
+                <li><a routerLink="/admin/tournaments">Tournaments</a></li>
+                <li><a routerLink="/admin/teams">Teams</a></li>
+                <li><a routerLink="/admin/judges">Judges</a></li>
+                <!-- Дополнительные ссылки для администратора -->
+            </ul>
+        </nav>
+    </header>
+    <main style="padding: 0">
+        <router-outlet></router-outlet> <!-- Здесь будет отображаться содержимое компонентов -->
+    </main>
+    <footer class="footer">
+        <p>&copy; 2023 EsportMonitor. Все права защищены. (нет)</p>
+    </footer>
+</div>

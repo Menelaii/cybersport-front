@@ -1,0 +1,19 @@
+<div class="judge-registration-page" *ngIf="isValidLink">
+    <h1>Регистрация судьи</h1>
+    <form [formGroup]="registrationForm" (ngSubmit)="onRegister()">
+        <input formControlName="firstName" placeholder="Имя" required>
+        <input formControlName="lastName" placeholder="Фамилия" required>
+        <input formControlName="middleName" placeholder="Отчество">
+        <!-- Для contacts можно использовать отдельные поля или динамический набор полей -->
+        <input formControlName="birthDate" placeholder="Дата рождения" required>
+        <input formControlName="subjectOfRF" placeholder="Субъект РФ">
+        <input formControlName="email" placeholder="Email" required>
+        <input type="password" formControlName="password" placeholder="Пароль" required>
+        <input formControlName="residence" placeholder="Место жительства">
+        <input type="number" formControlName="certificationLevel" placeholder="Уровень квалификации" required>
+        <button type="submit" [disabled]="!registrationForm.valid">Зарегистрироваться</button>
+    </form>
+</div>
+<div *ngIf="!isValidLink">
+    <p>Ссылка недействительна или истек её срок.</p>
+</div>

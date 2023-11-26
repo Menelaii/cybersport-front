@@ -8,6 +8,10 @@ import {TournamentService} from "./services/tournaments.service";
 import {HttpClientModule} from "@angular/common/http";
 import {TeamsService} from "./services/teams.service";
 import {MatchesService} from "./services/matches.service";
+import {AuthStorageService} from "./services/auth-storage.service";
+import {AuthService} from "./services/auth.service";
+import {InviteJudgesPageComponent} from "../admin/invite-judges-page/invite-judges-page.component";
+import {InviteService} from "./services/invites.service";
 
 @NgModule({
   imports: [
@@ -28,6 +32,9 @@ import {MatchesService} from "./services/matches.service";
       TournamentService,
       TeamsService,
       MatchesService,
+      AuthStorageService,
+      AuthService,
+      InviteService
   ]
 })
 export class SharedModule {

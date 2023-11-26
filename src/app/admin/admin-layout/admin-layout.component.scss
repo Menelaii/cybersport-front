@@ -1,0 +1,51 @@
+/* admin-layout.component.css */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #333;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  /* Стили для логотипа, если необходимо */
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+.navigation li {
+  margin-left: 20px;
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+}

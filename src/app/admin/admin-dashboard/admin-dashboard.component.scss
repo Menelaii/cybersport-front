@@ -1,0 +1,55 @@
+.admin-dashboard {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.widget {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 10px 0; /* Убраны маргины по бокам */
+  width: 100%; /* Ширина будет управляться гридом */
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.widget h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 18px; /* Увеличенный размер для заголовков виджета */
+}
+
+.widget p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Медиа-запросы для адаптивного дизайна */
+@media (max-width: 768px) {
+  .dashboard-widgets {
+    grid-template-columns: 1fr; /* 1 колонка на маленьких экранах */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .dashboard-widgets {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на средних экранах */
+  }
+}
