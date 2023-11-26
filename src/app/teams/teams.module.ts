@@ -4,12 +4,14 @@ import {RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import { TeamsPageComponent } from './teams-page/teams-page.component';
 import { TeamPageComponent } from './team-page/team-page.component';
+import { RaitingPageComponent } from './raiting-page/raiting-page.component';
 
 @NgModule({
     declarations: [
 
     TeamsPageComponent,
-         TeamPageComponent
+         TeamPageComponent,
+         RaitingPageComponent
   ],
     imports:[
         CommonModule,

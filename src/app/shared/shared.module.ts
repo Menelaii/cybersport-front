@@ -12,6 +12,7 @@ import {AuthStorageService} from "./services/auth-storage.service";
 import {AuthService} from "./services/auth.service";
 import {InviteJudgesPageComponent} from "../admin/invite-judges-page/invite-judges-page.component";
 import {InviteService} from "./services/invites.service";
+import {MvpService} from "./services/mvp.service";
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import {InviteService} from "./services/invites.service";
       MatchesService,
       AuthStorageService,
       AuthService,
-      InviteService
+      InviteService,
+      MvpService
   ]
 })
 export class SharedModule {

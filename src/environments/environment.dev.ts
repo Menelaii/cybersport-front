@@ -8,7 +8,8 @@ export const environment = {
   EXP_DATE_KEY: 'expiresIn',
   ROLE_KEY: 'role',
   REGISTER_JUDGE_URL: 'http://localhost:8080/api/Judge/SignUp',
-  VALIDATE_INVITE_LINK_URL: "http://localhost:8080/api/Invites"
+  VALIDATE_INVITE_LINK_URL: "http://localhost:8080/api/Invites",
+  MVP_URL: "http://localhost:8080/api/mvp"
 
 }
 
