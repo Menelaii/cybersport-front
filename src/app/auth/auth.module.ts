@@ -19,7 +19,6 @@ import { JudgeRegistrationPageComponent } from './judge-registration-page/judge-
         FormsModule,
         RouterModule.forChild([
             {path: '', component: LoginPageComponent},
-            {path: ''}
         ]),
         ReactiveFormsModule,
     ]

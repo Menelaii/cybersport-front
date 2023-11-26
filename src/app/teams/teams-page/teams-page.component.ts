@@ -40,7 +40,7 @@ export class TeamsPageComponent implements OnInit, OnDestroy {
     this.teamService.getTeams(xpage).subscribe(page => {
       this.teams = page.models;
       this.totalElements = page.totalElements;
-      this.isLoading = true;
+      this.isLoading = false;
     });
   }
 }
