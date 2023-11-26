@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {InviteService} from "../../shared/services/invites.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {CreateJudgeRequestDTO} from "../../shared/interfaces/judges/create-judge-request.dto";
@@ -17,7 +17,8 @@ export class JudgeRegistrationPageComponent {
   constructor(
       private route: ActivatedRoute,
       private fb: FormBuilder,
-      private invitationService: InviteService
+      private invitationService: InviteService,
+      private router: Router
   ) {
     this.registrationForm = this.fb.group({
       firstName: ['', Validators.required],
@@ -57,7 +58,7 @@ export class JudgeRegistrationPageComponent {
       this.invitationService.registerJudge(this.token, createJudgeDTO).subscribe(
           () => {
             console.log('Регистрация успешна');
-            // Перенаправить пользователя или показать сообщение об успехе
+            this.router.navigate(['/auth']);
           },
           error => {
             console.error('Ошибка при регистрации', error);

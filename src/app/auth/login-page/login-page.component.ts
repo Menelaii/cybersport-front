@@ -43,6 +43,9 @@ export class LoginPageComponent implements OnInit {
         case 'ROLE_ADMIN':
           this.router.navigate(['/admin', 'dashboard']);
           break;
+        case 'ROLE_JUDGE':
+          this.router.navigate(['/judge', 'dashboard']);
+          break;
         default:
           throw new Error('Неизвестная роль');
       }
@@ -77,6 +80,9 @@ export class LoginPageComponent implements OnInit {
           switch (value.role) {
             case 'ROLE_ADMIN':
               this.router.navigate(['/admin']);
+              break;
+            case 'ROLE_JUDGE':
+              this.router.navigate(['/judge', 'dashboard']);
               break;
             default:
               throw new Error('Неизвестная роль');

@@ -1,0 +1,33 @@
+/* Стили для общей формы и элементов управления */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Стили для секций с FormArray */
+.form-array-section {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-array-section h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* Стили для кнопок добавления внутри секций FormArray */
+.add-item-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Стили для динамически добавленных элементов */
+.dynamic-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}

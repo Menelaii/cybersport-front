@@ -1,0 +1,79 @@
+<div class="container mt-3">
+    <form [formGroup]="tournamentForm" (ngSubmit)="onSubmit()">
+        <!-- Основные поля турнира -->
+        <div class="form-group">
+            <label>Название</label>
+            <input formControlName="name" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label>Местоположение</label>
+            <input formControlName="location" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label>Дисциплина</label>
+            <input formControlName="discipline" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label>Организатор</label>
+            <input formControlName="organizer" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label>Дата начала</label>
+            <input formControlName="startDate" class="form-control" type="date">
+        </div>
+        <div class="form-group">
+            <label>Дата завершения</label>
+            <input formControlName="endDate" class="form-control" type="date">
+        </div>
+        <div class="form-group">
+            <label>Дата регистрации</label>
+            <input formControlName="registrationDate" class="form-control" type="date">
+        </div>
+        <div class="form-group">
+            <label>Дата составления отчёта</label>
+            <input formControlName="reportDate" class="form-control" type="date">
+        </div>
+        <div class="form-group">
+            <label>Дата закрытия</label>
+            <input formControlName="closingDate" class="form-control" type="date">
+        </div>
+
+        <!-- Секция этапов -->
+        <div class="form-array-section" formArrayName="stages">
+            <h3>Этапы</h3>
+            <div *ngFor="let stage of stages.controls; let i=index" [formGroupName]="i" class="dynamic-item">
+                <div class="form-group">
+                    <label>Этап {{i + 1}} Название</label>
+                    <input formControlName="name" class="form-control" type="text">
+
+                    <div formArrayName="matches">
+                        <div *ngFor="let match of getMatches(i).controls; let j=index" [formGroupName]="j" class="dynamic-item">
+                            <div class="form-group">
+                                <input formControlName="team1Id" class="form-control" type="number" placeholder="ID команды 1">
+                                <input formControlName="team2Id" class="form-control" type="number" placeholder="ID команды 2">
+                                <input formControlName="winnerTeamId" class="form-control" type="number" placeholder="ID победившей команды">
+                            </div>
+                        </div>
+                    </div>
+                    <button (click)="addMatch(i)" class="btn btn-secondary btn-sm">Добавить матч</button>
+                </div>
+            </div>
+            <button (click)="addStage()" class="btn btn-secondary add-item-btn">Добавить этап</button>
+        </div>
+
+        <!-- Секция результатов -->
+        <div class="form-array-section" formArrayName="results">
+            <h3>Результаты</h3>
+            <div *ngFor="let result of results.controls; let k=index" [formGroupName]="k" class="dynamic-item">
+                <div class="form-group">
+                    <input formControlName="teamId" class="form-control" type="number" placeholder="ID команды">
+                    <input formControlName="allStagesScore" class="form-control" type="number" placeholder="Очки за все этапы">
+                    <input formControlName="takenPlace" class="form-control" type="number" placeholder="Занятое место">
+                </div>
+            </div>
+            <button (click)="addResult()" class="btn btn-secondary add-item-btn">Добавить результат</button>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!this.tournamentForm.valid">Создать турнир</button>
+    </form>
+</div>
