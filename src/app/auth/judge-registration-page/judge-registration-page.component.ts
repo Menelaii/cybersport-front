@@ -23,7 +23,7 @@ export class JudgeRegistrationPageComponent {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       middleName: [''],
-      contacts: this.fb.array([]), // Для контактов может понадобиться дополнительная логика
+      contacts: this.fb.array([]),
       birthDate: ['', Validators.required],
       subjectOfRF: [''],
       email: ['', [Validators.required, Validators.email]],

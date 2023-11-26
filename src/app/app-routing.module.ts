@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from "@angular/router";
 import {MainLayoutComponent} from "./shared/components/main-layout-component/main-layout.component";
 import {HomePageComponent} from "./home-page/home-page.component";
+import {RegistrationPageComponent} from "./registration-page/registration-page.component";
 
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
         path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       },
+      {
+        path: 'registration',
+        component: RegistrationPageComponent
+      }
     ]
   },
   {

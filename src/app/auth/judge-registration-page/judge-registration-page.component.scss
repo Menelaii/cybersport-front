@@ -1,0 +1,51 @@
+.judge-registration-page {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.judge-registration-page h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+.judge-registration-page form {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.judge-registration-page input,
+.judge-registration-page button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.judge-registration-page button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.judge-registration-page button:hover {
+  background-color: #0056b3;
+}
+
+.judge-registration-page button:disabled {
+  background-color: #6c757d;
+  cursor: default;
+}
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: .875em;
+  color: #dc3545;
+}
